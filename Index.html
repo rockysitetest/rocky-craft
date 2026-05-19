@@ -1,9 +1,15 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Browser tab title -->
   <title>RockyCraft - Rocky Reborn</title>
+
+  <!-- Favicon (put IMG_3873.png in the same folder as this file) -->
+  <link rel="icon" type="image/png" href="IMG_3873.png" />
+
   <style>
     html, body {
       margin: 0;
@@ -11,10 +17,26 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: black;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 9999;
     }
 
     iframe {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border: none;
@@ -22,10 +44,15 @@
   </style>
 </head>
 <body>
+  <!-- Loading screen -->
+  <div id="loading">Loading Eaglercraft 1.8.8...</div>
+
+  <!-- Game -->
   <iframe
     src="https://eaglercraft.com/play?version=1.8.8"
     allowfullscreen
     sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms"
+    onload="document.getElementById('loading').style.display='none';"
   ></iframe>
 </body>
 </html>
